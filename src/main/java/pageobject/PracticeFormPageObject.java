@@ -3,6 +3,7 @@ package pageobject;
 import configuretions.BaseClass;
 import data.User;
 import io.opentelemetry.sdk.resources.Resource;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -51,8 +52,8 @@ public class PracticeFormPageObject extends BaseClass {
     WebElement day;
     @FindBy(id = "uploadPicture")
     WebElement uploadPicture;
-    @FindBy(id = "closeLargeModal")
-    WebElement close;
+    @FindBy(id = "example-modal-sizes-title-lg")
+    WebElement submitInfo;
 
     public void completeForm(User user) {
         this.inputFirstNameField.sendKeys(user.getFirstname());
@@ -90,9 +91,9 @@ public class PracticeFormPageObject extends BaseClass {
         this.city.sendKeys("E");
         this.city.sendKeys(Keys.ENTER);
         this.submit.sendKeys(Keys.ENTER);
-
+        Assert.assertEquals("Thanks for submitting the form", submitInfo.getText());
         try {
-            Thread.sleep(1000);
+            Thread.sleep(4000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
