@@ -84,7 +84,7 @@ public class PracticeFormPageObject extends BaseClass {
             }
         }
         this.hobbiesSport.click();
-        this.uploadPicture.sendKeys("C:\\Users\\nazar\\IdeaProjects\\HomeworkQA_AQA_Holidaysz_Naz\\images.jpg");
+       // this.uploadPicture.sendKeys("C:\\Users\\nazar\\IdeaProjects\\HomeworkQA_AQA_Holidaysz_Naz\\images.jpg"); пропишите свой абсолютный путь для загрузки картинки
         this.inputAddressField.sendKeys(user.getAddress());
         this.state.sendKeys("E");
         this.state.sendKeys(Keys.ENTER);
